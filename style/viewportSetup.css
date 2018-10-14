@@ -1,0 +1,25 @@
+body{
+	margin: 0px;
+	border: 0px;
+	padding: 0px;
+	
+	/*pointer-events: all;
+	cursor: crosshair;*/
+	
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	
+	overflow: hidden;
+}
+
+.flex-centered{
+  display: flex;
+  display: -webkit-flex; /* Safari */
+  justify-content: center;
+  -webkit-justify-content: center;
+  align-items: center; 
+}
