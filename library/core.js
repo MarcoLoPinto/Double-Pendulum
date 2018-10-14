@@ -11,15 +11,15 @@ var pendulum = new Pendulum(game.getContext(),game.getCanvas().width/2,game.getC
 
 const g = 9.81;
 
-var length1 = 1000*1;
-var m1 = 0.5; //kg
-var a1 = (Math.PI/180)*30;
+var length1 = parseFloat(document.getElementById("length1").value)*1000;
+var m1 = parseFloat(document.getElementById("m1").value); //kg
+var a1 = parseFloat(document.getElementById("a1_value").value)*(Math.PI/180);
 var a1_v = 0;
 var a1_a = 0;
 
-var length2 = 1000*3;
-var m2 = 0.5; //kg
-var a2 = (Math.PI/180)*120;
+var length2 = parseFloat(document.getElementById("length2").value)*1000;
+var m2 = parseFloat(document.getElementById("m1").value); //kg
+var a2 = parseFloat(document.getElementById("a2_value").value)*(Math.PI/180);
 var a2_v = 0;
 var a2_a = 0;
 
