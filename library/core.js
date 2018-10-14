@@ -31,7 +31,6 @@ $( window ).resize(() => {
 function drawCoreFunction(){
 	game.clearCanvasArea(0,0,game.getCanvas().width,game.getCanvas().height);
 	
-	
 	a1_a = getEq1();
 	a2_a = getEq2();
 	
@@ -52,6 +51,9 @@ function drawCoreFunction(){
 	
 	pendulum.drawPendulum(0,0,x1,y1,m1);
 	pendulum.drawPendulum(x1,y1,x2,y2,m2);
+	
+	pendulum.takePoint(x2,y2);
+	pendulum.drawPoints();
 	
 	window.requestAnimationFrame(drawCoreFunction);
 }
@@ -92,16 +94,6 @@ document.getElementById("length2").oninput = () => {
 
 document.getElementById("m1").oninput = () => {
    document.getElementById("m1_value").value = document.getElementById("m1").value;
-   length1 = parseFloat(document.getElementById("m1").value);
-}
-
-document.getElementById("m2").oninput = () => {
-   document.getElementById("m2_value").value = document.getElementById("m2").value;
-   length2 = parseFloat(document.getElementById("m2").value);
-}
-
-document.getElementById("m1").oninput = () => {
-   document.getElementById("m1_value").value = document.getElementById("m1").value;
    m1 = parseFloat(document.getElementById("m1").value);
 }
 
@@ -113,6 +105,18 @@ document.getElementById("m2").oninput = () => {
 function setAngles(){
 	a1 = parseFloat(document.getElementById("a1_value").value)*(Math.PI/180);
 	a2 = parseFloat(document.getElementById("a2_value").value)*(Math.PI/180);
+}
+
+function resetAndSet(){
+	a1_v = 0;
+	a1_a = 0;
+	a2_v = 0;
+	a2_a = 0;
+	setAngles();
+	m1 = parseFloat(document.getElementById("m1").value);
+	m2 = parseFloat(document.getElementById("m2").value);
+	length1 = parseFloat(document.getElementById("length1").value) * 1000;
+	length2 = parseFloat(document.getElementById("length2").value) * 1000;
 }
 
 /*

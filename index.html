@@ -25,7 +25,7 @@
 			<div class="flex-centered" style="flex-direction: column; width:20%;">
 				<p style="height:10%;">Rod 2 length</p>
 				<input type="range" id="length2" min="0.1" max="6" step="0.1" value="3" style="width:90%; height:20%;">
-				<input type="text" id="length2_value" style="width:50%; height:20%;" value="1" readonly>
+				<input type="text" id="length2_value" style="width:50%; height:20%;" value="3" readonly>
 			</div>
 			<div class="flex-centered" style="flex-direction: column; width:20%;">
 				<p style="height:10%;">Mass 1</p>
@@ -46,7 +46,8 @@
 				<input type="text" id="a2_value" style="width:50%; height:20%;" value="120">
 			</div>
 			<div class="flex-centered" style="flex-direction: column; width:20%;">
-				<button type="button" onclick="setAngles()" style="height:50%;">Set Angles</button>
+				<button type="button" onclick="setAngles()" style="height:30%;">Set Angles</button>
+				<button type="button" onclick="resetAndSet()" style="height:30%;">Reset with input</button>
 			</div>
 			
 		</div>

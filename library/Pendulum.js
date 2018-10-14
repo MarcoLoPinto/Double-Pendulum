@@ -5,6 +5,7 @@ class Pendulum{
 		this.gY = startY;
 		this.unitKg = kgUnitDimension;
 		this.unitLength = lengthUnitDimension;
+		this.trace = [];
 	}
 	
 	drawBall(x,y,m){
@@ -35,6 +36,17 @@ class Pendulum{
 		this.gY = startY;
 		this.unitKg = kgUnitDimension;
 		this.unitLength = lengthUnitDimension;
+	}
+	
+	takePoint(valx,valy){
+		this.trace.push({x:valx,y:valy});
+		if(this.trace.length > 300) this.trace.shift();
+	}
+	
+	drawPoints(){
+		for(var i = 1; i< this.trace.length; i++){
+			this.drawLine(this.trace[i-1].x,this.trace[i-1].y,this.trace[i].x,this.trace[i].y);
+		}
 	}
 	
 }
