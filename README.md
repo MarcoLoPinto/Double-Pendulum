@@ -1,5 +1,5 @@
 # Double Pendulum
 A doule pendulum simulation.
 
-## Simulation Site
+## Simulation
 https://marcolopinto.github.io/Double-Pendulum/
