@@ -22,11 +22,6 @@ var m2 = parseFloat(document.getElementById("m1").value); //kg
 var a2 = parseFloat(document.getElementById("a2_value").value)*(Math.PI/180);
 var a2_v = 0;
 var a2_a = 0;
-
-$( window ).resize(() => {
-  game.resizeCanvas(window.innerWidth,window.innerHeight*0.8);
-  pendulum.onResize(game.getCanvas().width/2,game.getCanvas().height/32,game.getDimension(),game.getDimension()*(4/1000));
-});
 		
 function drawCoreFunction(){
 	game.clearCanvasArea(0,0,game.getCanvas().width,game.getCanvas().height);
@@ -102,6 +97,13 @@ document.getElementById("m2").oninput = () => {
    m2 = parseFloat(document.getElementById("m2").value);
 }
 
+
+$( window ).resize(() => {
+  game.resizeCanvas(window.innerWidth,window.innerHeight*0.8);
+  pendulum.onResize(game.getCanvas().width/2,game.getCanvas().height/32,game.getDimension(),game.getDimension()*(4/1000));
+});
+
+
 function setAngles(){
 	a1 = parseFloat(document.getElementById("a1_value").value)*(Math.PI/180);
 	a2 = parseFloat(document.getElementById("a2_value").value)*(Math.PI/180);
@@ -119,32 +121,3 @@ function resetAndSet(){
 	length2 = parseFloat(document.getElementById("length2").value) * 1000;
 }
 
-/*
-
-ctxId.style.width,ctxId.style.height
-
-
-
-
-
-function getEq1(){
-	var num1 = -g * (2 * m1 + m2) * Math.sin(a1*(Math.PI/180));
-	var num2 = -m2 * g * Math.sin(a1*(Math.PI/180)-2*a2*(Math.PI/180));
-	var num3 = -2*Math.sin(a1*(Math.PI/180)-a2*(Math.PI/180))*m2;
-	var num4 = a2_v*a2_v*length2+a1_v*a1_v*length1*Math.cos(a1*(Math.PI/180)-a2*(Math.PI/180));
-	var den = length1 * (2*m1+m2-m2*Math.cos(2*a1*(Math.PI/180)-2*a2*(Math.PI/180)));
-	var acceleration = (num1 + num2 + num3*num4) / den;
-	return acceleration;
-}
-
-function getEq2(){
-	var num1 = 2 * Math.sin(a1*(Math.PI/180)-a2*(Math.PI/180));
-	var num2 = (a1_v*a1_v*length1*(m1+m2));
-	var num3 = g * (m1 + m2) * Math.cos(a1*(Math.PI/180));
-	var num4 = a2_v*a2_v*length2*m2*Math.cos(a1*(Math.PI/180)-a2*(Math.PI/180));
-	var den = length2 * (2*m1+m2-m2*Math.cos(2*a1*(Math.PI/180)-2*a2*(Math.PI/180)));
-	var acceleration = (num1*(num2+num3+num4)) / den;
-	return acceleration;
-}
-
-*/
